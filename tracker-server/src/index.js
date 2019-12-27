@@ -1,8 +1,10 @@
-require("./models/user");
+require("./models/User");
+require("./models/Track");
 const express = require("express");
-const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
 const authRoutes = require("./routes/authRoutes");
+const trackRoutes = require("./routes/trackRoutes");
 const requireAuth = require("./middlewares/requireAuth");
 
 require("dotenv").config();
@@ -11,10 +13,13 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(authRoutes);
+app.use(trackRoutes);
 
 // const mongoUri = `mongodb+srv://${process.env.DB_NAME}:${process.env.DB_PASS}@cluster0-8mmaj.gcp.mongodb.net/test?retryWrites=true&w=majority`;
 
-mongoose.connect(process.env.MONGO_URL, {
+const mongoUri = process.env.MONGO_URL;
+
+mongoose.connect(mongoUri, {
   useNewUrlParser: true,
   useCreateIndex: true,
   useUnifiedTopology: true
@@ -32,6 +37,7 @@ app.get("/", requireAuth, (req, res) => {
   res.send(`Your email: ${req.user.email}`);
 });
 
-app.listen(3000, () => {
-  console.log("Listening on port 3000");
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Listening on port ${port}`);
 });
