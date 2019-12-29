@@ -30,7 +30,33 @@ npm install -g expo-cli
 
 ## Usage
 
+You will need to run three seperate terminals:
+
+1. Tracks folder - This is your front end in Expo for your phone or emulator. 
+
+Run by using
+
+```bash
+npm run start
+```
+
+2. Tracks-Server folder - This will run your node/Express server
+
+```bash
+npm run start
+```
+
+3. ngrok - to expose a webserver from your local machine
+
+```bash
+ngrok http 3000
+```
+
 To run on an iOS simulator, follow the instructions available on the [Expo website.](https://docs.expo.io/versions/v36.0.0/workflow/ios-simulator/)
+
+## Dependencies:
+
+[ngrok](https://ngrok.com/docs)
 
 ## Contributing
 
