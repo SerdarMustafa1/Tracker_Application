@@ -46,6 +46,11 @@ const Map = () => {
           color="#0000ff"
           // onPress={}
         />
+        <MapView.Marker
+          coordinate={{ ...currentLocation.coords }}
+          title={"Current Location"}
+          // description={"description"}
+        />
       </MapView>
     </View>
   );

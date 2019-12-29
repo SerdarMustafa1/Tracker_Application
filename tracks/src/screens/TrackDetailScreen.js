@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { StyleSheet, Dimensions } from "react-native";
+import { StyleSheet, Dimensions, Image } from "react-native";
 import { Text } from "react-native-elements";
 import MapView, { Polyline } from "react-native-maps";
 import { Context as TrackContext } from "../context/TrackContext";
@@ -12,6 +12,7 @@ const TrackDetailScreen = ({ navigation }) => {
 
   const track = state.find(t => t._id === _id);
   const initialCoords = track.locations[0].coords;
+  const coords = track.locations.coords;
 
   return (
     <>
@@ -27,6 +28,16 @@ const TrackDetailScreen = ({ navigation }) => {
         style={styles.map}
       >
         <Polyline coordinates={track.locations.map(loc => loc.coords)} />
+        <MapView.Marker
+          coordinate={track.locations.map(loc => loc.coords).slice(-1)[0]}
+          title={"Finish Location"}
+          // description={"description"}
+        >
+          <Image
+            style={{ width: 40, height: 40 }}
+            source={require("../../assets/flag_marker.png")}
+          />
+        </MapView.Marker>
       </MapView>
     </>
   );
