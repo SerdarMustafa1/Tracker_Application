@@ -10,6 +10,7 @@ import Map from "../components/Map";
 import TrackForm from "../components/TrackForm";
 
 import { FontAwesome } from "@expo/vector-icons";
+import { ScrollView } from "react-native-gesture-handler";
 
 const TrackCreateScreen = ({ isFocused }) => {
   const {
@@ -26,14 +27,16 @@ const TrackCreateScreen = ({ isFocused }) => {
 
   return (
     <SafeAreaView forceInset={{ top: "always" }}>
-      <Text style={styles.title} h3>
-        Track a new activity
-      </Text>
-      <Map />
-      {err ? (
-        <Text style={styles.permission}>Please enable location services</Text>
-      ) : null}
-      <TrackForm />
+      <ScrollView>
+        <Text style={styles.title} h3>
+          Track a new activity
+        </Text>
+        <Map />
+        {err ? (
+          <Text style={styles.permission}>Please enable location services</Text>
+        ) : null}
+        <TrackForm />
+      </ScrollView>
     </SafeAreaView>
   );
 };
