@@ -3,14 +3,14 @@ import { StyleSheet } from "react-native";
 import { Text } from "react-native-elements";
 import { SafeAreaView, withNavigationFocus } from "react-navigation";
 
+import { FontAwesome } from "@expo/vector-icons";
+import { ScrollView } from "react-native-gesture-handler";
+
 import { Context as LocationContext } from "../context/LocationContext";
 import useLocation from "../hooks/useLocation";
 
 import Map from "../components/Map";
 import TrackForm from "../components/TrackForm";
-
-import { FontAwesome } from "@expo/vector-icons";
-import { ScrollView } from "react-native-gesture-handler";
 
 const TrackCreateScreen = ({ isFocused }) => {
   const {
@@ -36,6 +36,7 @@ const TrackCreateScreen = ({ isFocused }) => {
           <Text style={styles.permission}>Please enable location services</Text>
         ) : null}
         <TrackForm />
+        git
       </ScrollView>
     </SafeAreaView>
   );
