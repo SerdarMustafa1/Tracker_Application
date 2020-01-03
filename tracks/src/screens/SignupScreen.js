@@ -27,11 +27,9 @@ const SignupScreen = ({ navigation }) => {
   );
 };
 
-SignupScreen.navigationOptions = () => {
-  return {
-    header: null
-  };
-};
+SignupScreen.navigationOptions = () => ({
+  header: null
+});
 
 const styles = StyleSheet.create({
   container: {
