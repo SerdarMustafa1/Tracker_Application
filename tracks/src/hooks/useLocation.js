@@ -21,7 +21,7 @@ export default (shouldTrack, callback) => {
           },
           callback
         );
-        setSubscriber(sub);
+        // setSubscriber(sub);
       } catch (e) {
         setErr(e);
       }

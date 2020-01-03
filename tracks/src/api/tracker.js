@@ -4,7 +4,7 @@ import ENV from "../../env";
 
 const instance = axios.create({
   // baseURL: `${ENV.baseURL}`
-  baseURL: "http://fc983adf.ngrok.io"
+  baseURL: "https://serdar-tracker-server.herokuapp.com/"
 });
 
 instance.interceptors.request.use(
@@ -15,9 +15,7 @@ instance.interceptors.request.use(
     }
     return config;
   },
-  err => {
-    return Promise.reject(err);
-  }
+  err => Promise.reject(err)
 );
 
 export default instance;
