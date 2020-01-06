@@ -30,6 +30,8 @@ npm install -g expo-cli
 
 ## Usage
 
+## UPDATE --- The server is now running on heroku so you can just follow the instructions for running the app via Expo on your device or an emulator. 
+
 You will need to run three seperate terminals:
 
 1. Tracks folder - This is your front end in Expo for your phone or emulator. 
