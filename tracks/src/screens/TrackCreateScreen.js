@@ -36,7 +36,6 @@ const TrackCreateScreen = ({ isFocused }) => {
           <Text style={styles.permission}>Please enable location services</Text>
         ) : null}
         <TrackForm />
-        git
       </ScrollView>
     </SafeAreaView>
   );
