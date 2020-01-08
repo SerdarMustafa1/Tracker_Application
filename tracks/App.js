@@ -2,6 +2,7 @@ import React from "react";
 import { createAppContainer, createSwitchNavigator } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 import { createBottomTabNavigator } from "react-navigation-tabs";
+import { FontAwesome } from "@expo/vector-icons";
 
 import { Provider as LocationProvider } from "./src/context/LocationContext";
 import { Provider as AuthProvider } from "./src/context/AuthContext";
@@ -16,8 +17,6 @@ import TrackCreateScreen from "./src/screens/TrackCreateScreen";
 import TrackDetailScreen from "./src/screens/TrackDetailScreen";
 import TrackListScreen from "./src/screens/TrackListScreen";
 import ResolveAuthScreen from "./src/screens/ResolveAuth";
-
-import { FontAwesome } from "@expo/vector-icons";
 
 const trackListFlow = createStackNavigator({
   TrackList: TrackListScreen,
@@ -44,18 +43,16 @@ const switchNavigator = createSwitchNavigator({
 
 const App = createAppContainer(switchNavigator);
 
-export default () => {
-  return (
-    <TrackProvider>
-      <LocationProvider>
-        <AuthProvider>
-          <App
-            ref={navigator => {
-              setNavigator(navigator);
-            }}
-          />
-        </AuthProvider>
-      </LocationProvider>
-    </TrackProvider>
-  );
-};
+export default () => (
+  <TrackProvider>
+    <LocationProvider>
+      <AuthProvider>
+        <App
+          ref={navigator => {
+            setNavigator(navigator);
+          }}
+        />
+      </AuthProvider>
+    </LocationProvider>
+  </TrackProvider>
+);

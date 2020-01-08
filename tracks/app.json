@@ -5,11 +5,11 @@
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "platforms": ["ios", "android", "web"],
-    "version": "1.0.0",
+    "version": "1.0.3",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/worldwide-location.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/worldwide-location.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -22,7 +22,7 @@
     },
     "android": {
       "package": "com.phoenix.findme",
-      "versionCode": 1000
+      "versionCode": 1003
     }
   }
 }

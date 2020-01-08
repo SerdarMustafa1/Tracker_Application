@@ -23,6 +23,13 @@ const Map = () => {
 
   return (
     <View style={styles.container}>
+      {/* <Icon
+        raised
+        name="map-pin"
+        type="font-awesome"
+        color="#0000ff"
+        style={styles.mapIcon}
+      /> */}
       <MapView
         style={styles.map}
         initialRegion={{
@@ -39,13 +46,7 @@ const Map = () => {
           fillColor="rgba(158, 158, 255, 0.3)"
         />
         <Polyline coordinates={locations.map(loc => loc.coords)} />
-        <Icon
-          raised
-          name="map-pin"
-          type="font-awesome"
-          color="#0000ff"
-          // onPress={}
-        />
+
         <MapView.Marker
           coordinate={{ ...currentLocation.coords }}
           title={"Current Location"}
@@ -69,6 +70,11 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     marginHorizontal: 10
   }
+  // mapIcon: {
+  //   position: "absolute",
+  //   top: 10,
+  //   left: 50
+  // }
 });
 
 export default Map;
